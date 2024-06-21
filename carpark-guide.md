@@ -72,10 +72,10 @@ Include a screenshot of your GitHub repository **after** you have pushed your in
 After reading the task requirements, you should be able to identify the classes, methods, and attributes required for the car park system. Complete the following table with the classes, methods, and attributes you must implement.
 
 | Class Name | Attributes | Methods |
-| ---------- | ---------- | ------- |
-| `CarPark`    |            |         |
-| `Sensor`     |            |         |
-| `Display`    |            |         |
+| ---------- | ---------- |------|
+| `CarPark`    |            | Register |
+| `Sensor`     |            | add  |
+| `Display`    |            | Remove |
 
 **Evidencing:**
 Ensure you have completed the previous table and include at least two methods and attributes for each.
@@ -204,13 +204,14 @@ You realize that you need a way to configure the car park system. You decide to 
 --------
 **Evidencing:**
 Ensure that you have completed the previous steps and created the appropriate tags. Confirm that the tags have been created by running `git tag` in the terminal and provide a screenshot of the output.
+![img_2.png](img_2.png)
 
 ```bash
 [student@workstation ipriot-car-park-prj]$ git tag
 s1
 s2
 ```
-
+![img_3.png](img_3.png)
 ### Relate the classes
 
 Let's consider how the classes relate to each other. We can start by using a sequence diagram to illustrate class interactions. A sequence diagram shows the interactions between objects in a sequential order. The following diagram shows the interactions between the `CarPark`, `Sensor`, and `Display` classes.
