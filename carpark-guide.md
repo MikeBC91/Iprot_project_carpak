@@ -71,11 +71,11 @@ Include a screenshot of your GitHub repository **after** you have pushed your in
 
 After reading the task requirements, you should be able to identify the classes, methods, and attributes required for the car park system. Complete the following table with the classes, methods, and attributes you must implement.
 
-| Class Name | Attributes | Methods |
-| ---------- | ---------- |------|
-| `CarPark`    |            | Register |
-| `Sensor`     |            | add  |
-| `Display`    |            | Remove |
+| Class Name | Attributes     | Methods    |
+| ---------- |----------------|------------|
+| `CarPark`    | available_bays | Register   |
+| `Sensor`     |                | add_car    |
+| `Display`    |                | Remove_car |
 
 **Evidencing:**
 Ensure you have completed the previous table and include at least two methods and attributes for each.
@@ -334,6 +334,7 @@ Now, we can add the code to add the `component` to the appropriate list. Add the
 
 **Evidencing:**
 After you have implemented the required code, commit your changes to the local repository and add a tag so your lecturer can find it:
+![img_4.png](img_4.png)
 
    ```bash
    git add .
