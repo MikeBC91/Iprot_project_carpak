@@ -7,18 +7,18 @@ class CarPark:
                  capacity,
                  plates = None,
                  sensors = None,
-                 display = None):
+                 displays = None):
         self.location = location
         self.capacity = capacity
         self.plates = plates or []
         self.sensors = sensors or []
-        self.display = display or []
+        self.displays = displays or []
 
 
     @property
-    def get_available_bays(self):
+    def available_bays(self):
         # car_park.available_bays
-        return self.capacity - len(self.plates)
+        return max(0, self.capacity - len(self.plates))
     def __str__(self):
         return f'Welcome to {self.location} car park'
 
