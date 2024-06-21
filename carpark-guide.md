@@ -430,6 +430,7 @@ The `update_displays` method shall send status information: available bays, temp
 
 **Evidencing:**
 After you have implemented the required code, commit your changes to the local repository and add a tag so your lecturer can find it:
+![img_6.png](img_6.png)
 
    ```bash
    git add .
@@ -445,9 +446,7 @@ This time, we will push the tag to the remote repository:
 
 Add a screenshot of the GitHub repository after pushing the tag, showing the CarPark class with the new methods:
 
-```markdown
-![Added methods to the car park class](images/methods-to-car-park.png)
-```
+![img_7.png](img_7.png)
 
 Answer the following questions:
 > **Review Questions**
