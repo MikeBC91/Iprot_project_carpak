@@ -71,11 +71,11 @@ Include a screenshot of your GitHub repository **after** you have pushed your in
 
 After reading the task requirements, you should be able to identify the classes, methods, and attributes required for the car park system. Complete the following table with the classes, methods, and attributes you must implement.
 
-| Class Name | Attributes     | Methods    |
-| ---------- |----------------|------------|
-| `CarPark`    | available_bays | Register   |
-| `Sensor`     |                | add_car    |
-| `Display`    |                | Remove_car |
+| Class Name | Attributes                                                                          | Methods                                                                                                                                 |
+| ---------- |-------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| `CarPark`    | location,capacity,log_file='log.txt',plates = None,sensors = None, displays = None): | to jison, from_json, available_bays,register, _log_car, add_car,remove_car,update_displays, _log_car_activity, write_config,from_config |
+| `Sensor`     |             id,car_park,is_active                                                   | scan plate, update car park, detect_ vehicle                                                                                            |
+| `Display`    |                    id, car_park, message,is_on                                      | update                                                                                                                                  |
 
 **Evidencing:**
 Ensure you have completed the previous table and include at least two methods and attributes for each.
@@ -369,12 +369,12 @@ You may want to see the number of available bays, the current temperature, and t
 
 Now consider, between the `CarPark`, `Sensor`, and `Display` classes, which class is responsible for each piece of information? There's no right or wrong answer here. But you should be able to justify your answer.
 
->Q. Which class is responsible for the number of available bays (and why)?
->
->Q. Which class is responsible for the current temperature (and why)?
->
->Q. Which class is responsible for the time (and why)?
->
+>- Q. Which class is responsible for the number of available bays (and why)?
+>-- the car park class because it is the class that tracks cars
+>- Q. Which class is responsible for the current temperature (and why)?
+>-- the car park class because of the update display method 
+>- Q. Which class is responsible for the time (and why)?
+>-- the car park class because the log car method
 --------
 
 ##### Detour: implement available bays
@@ -453,17 +453,17 @@ Answer the following questions:
 >
 > 1. **Which class is responsible for each of the following pieces of information (and why)?**
 >    - _The number of available bays_  
->      `Answer here...`
+>      `the car park because the it tracks the capacity`
 >    - _The current temperature_  
->      `Answer here...`
+>      `the car park because it updates the display`
 >    - _The time_  
->      `Answer here...`
+>      `the car park because it logs incoming and outgoing cars    `
 >
 > 2. **What is the difference between an attribute and a property?**  
->    `Answer here...`
+>    `An attribute is a variable in a class that stores the data for the class. A property is a  kind of attribute that lets you control that data using functions or methods.`
 >
 > 3. **Why do you think we used a dictionary to hold the data we passed the display? List at least one advantage and one disadvantage of this approach.**  
->    `Answer here...`
+>    `We used dictionaries because they make it easy to store data, and this would be an advantage. On the other hand, accessing such data can be slower depending on the program's size, which would be a disadvantage. `
 
 #### Add a detect vehicle method to the Sensor class
 
@@ -784,7 +784,7 @@ Finally, we'll create tests for the `Sensor` class. These tests will test the `_
 
 The car park register method should accept a `Sensor` or `Display` object. It should raise a `TypeError` if the object is neither a `Sensor` nor a `Display`. Before proceeding, think about where you would test this behaviour. Should you test it in the `CarPark` unit tests or the `Sensor` unit tests? Why?
 
-> Answer here...
+> the car park class because this manages the objects, and sensor only takes care of collect the plate number 
 
 Create a new unit test in the `test_car_park.py` file called `test_register_raises_type_error`. This test should create a `CarPark` object and a `str` object. It should then call the `register` method on the `CarPark` object with the `str` object as a parameter. The test should assert that a `TypeError` is raised. Here is a sample implementation:
 
@@ -1033,9 +1033,7 @@ We are going to do the latter:
 **Evidencing:**
 After you have merged your branch to main, push to your remote with the s10 tag. Add a screenshot of the GitHub repository after pushing the tag, showing the CarPark class with the new methods:
 
-```markdown
-![Added methods to the car park class](images/methods-to-car-park.png)
-```
+![img_11.png](img_11.png)
 
 ### Final step: build a car park!
 
@@ -1070,9 +1068,7 @@ In your final submission, you must include any files you created or modified. Th
 
 1. Add a screenshot of the output of the `main.py` file:
 
-   ```markdown
-   ![Main.py output](images/main-py.png)
-   ```
+ ![img_12.png](img_12.png)
 
 2. Commit your changes to the local repository. Tag the commit with `v1`, so your lecturer can find it. Ensure the commit includes the log and config files (though you would typically ignore them).
 3. Push the tag to the remote repository.
