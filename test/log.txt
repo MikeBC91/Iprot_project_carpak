@@ -1,0 +1,4 @@
+FAKE-001 entered on the 22/06/2024 10:07
+FAKE-004 exited on the 22/06/2024 10:07
+FAKE-001 entered on the 22/06/2024 10:08
+FAKE-004 exited on the 22/06/2024 10:08
