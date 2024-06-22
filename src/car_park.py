@@ -1,5 +1,5 @@
-import json
-
+import json # s9
+from pathlib import Path # s9
 from sensor import Sensor
 from display import Display
 from pathlib import Path
@@ -34,20 +34,18 @@ class CarPark:
     @staticmethod
     def from_json(file_name):
         """Allows the creation of an instance of CarPark from a JSON.
-        >>> car_park = CarPark.from_json("some_file.txt")"""
+             car_park = CarPark.from_json("some_file.txt")"""
         with open(file_name, 'r') as file:
             conf = json.load(file)
         return CarPark(location=conf["location"],
                        capacity=(conf["capacity"]),
                        log_file=conf["log_file"])
 
-
-
-
     @property
     def available_bays(self):
         # car_park.available_bays
         return max(0, self.capacity - len(self.plates))
+
     def __str__(self):
         return f'Welcome to {self.location} car park'
 
