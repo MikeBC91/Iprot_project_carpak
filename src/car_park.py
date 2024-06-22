@@ -5,6 +5,7 @@ from display import Display
 from pathlib import Path
 from datetime import datetime
 import json
+
 class CarPark:
 
     def __init__(self,
