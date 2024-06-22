@@ -20,10 +20,8 @@ class CarPark:
         self.plates = plates or []
         self.sensors = sensors or []
         self.displays = displays or []
-
-        self.log_file = Path(log_file)
-        if not self.log_file.exists():
-            self.log_file.touch()
+        self.log_file = log_file if isinstance(log_file, Path) else Path(log_file)
+        self.log_file.touch(exist_ok=True)
 
     def to_json(self, file_name):
         with open(file_name, 'w') as file:
@@ -65,6 +63,7 @@ class CarPark:
 
     def add_car(self, plate):
         self.plates.append(plate)
+        self.update_displays()
         self._log_car('entered', plate)
 
     def remove_car(self, plate):
@@ -77,6 +76,10 @@ class CarPark:
                             "Temperature": 42,}
                            )
             print(f"Updating: {display}")
+
+    def _log_car_activity(self, plate, action):
+        with self.log_file.open("a") as f:
+            f.write(f"{plate} {action} at {datetime.now():%Y-%m-%d %H:%M:%S}\n")
 
 
 
